@@ -22,23 +22,24 @@ func _process(delta: float) -> void:
 		$progress.visible=true
 		$progress.value = 1-$progressTimer.time_left/$progressTimer.wait_time
 	if inPlayer and Input.is_action_just_pressed("interact"):
+		print(player.Hand)
 		if player.Hand == inputID:
 			if !isHoldingInput:
-				isHoldingInput == true
+				player.Hand = 0
+				isHoldingInput = true
 		elif player.Hand == 0 and isHoldingInput == true:
 			$progressTimer.start()
 			active = true
 	if inPlayer and Input.is_action_just_released("interact"):
-		if isHoldingInput == false:
+		if isHoldingInput == true:
 			active = false
 			$progressTimer.stop()
 			
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.name)
 	if area.name == "PlayerArea":
 		inPlayer = true
-		player = get_parent()
+		player = area.get_parent()
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
