@@ -22,14 +22,16 @@ func _process(delta: float) -> void:
 		$progress.visible=true
 		$progress.value = 1-$progressTimer.time_left/$progressTimer.wait_time
 	if inPlayer and Input.is_action_just_pressed("interact"):
+		print(player.Hand)
 		if player.Hand == inputID:
 			if !isHoldingInput:
-				isHoldingInput == true
+				player.Hand = 0
+				isHoldingInput = true
 		elif player.Hand == 0 and isHoldingInput == true:
 			$progressTimer.start()
 			active = true
 	if inPlayer and Input.is_action_just_released("interact"):
-		if isHoldingInput == false:
+		if isHoldingInput == true:
 			active = false
 			$progressTimer.stop()
 			
