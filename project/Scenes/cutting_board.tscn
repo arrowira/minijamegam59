@@ -6,6 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8sgqr"]
 radius = 175.55911
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mqgb"]
+size = Vector2(122, 123)
+
 [node name="CuttingBoard" type="Node2D" unique_id=2018179734]
 script = ExtResource("1_oncj3")
 
@@ -19,6 +22,7 @@ offset_left = -53.0
 offset_top = -93.0
 offset_right = 53.0
 offset_bottom = -66.0
+max_value = 1.0
 
 [node name="progressTimer" type="Timer" parent="." unique_id=597786112]
 
@@ -26,3 +30,12 @@ offset_bottom = -66.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1013800573]
 shape = SubResource("CircleShape2D_8sgqr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=42131840]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=201781961]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_0mqgb")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
