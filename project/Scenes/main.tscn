@@ -13,3 +13,4 @@ position = Vector2(185, 159)
 position = Vector2(691, 418)
 
 [node name="CuttingBoard" parent="." unique_id=2018179734 instance=ExtResource("3_8gbba")]
+position = Vector2(439, 175)
