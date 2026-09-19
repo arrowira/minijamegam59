@@ -38,5 +38,6 @@ shape = SubResource("CircleShape2D_8sgqr")
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_0mqgb")
 
+[connection signal="timeout" from="progressTimer" to="." method="_on_progress_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
