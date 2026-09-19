@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1e6301qt30f3" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dactmv6wru0xm" path="res://Scenes/Tomato.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cbrnxfthuk5do" path="res://Scenes/cutting_board.tscn" id="3_8gbba"]
 
 [node name="main" type="Node2D" unique_id=635974732]
 
@@ -10,3 +11,5 @@ position = Vector2(185, 159)
 
 [node name="Tomato" parent="." unique_id=1995840475 instance=ExtResource("2_8gbba")]
 position = Vector2(691, 418)
+
+[node name="CuttingBoard" parent="." unique_id=2018179734 instance=ExtResource("3_8gbba")]
