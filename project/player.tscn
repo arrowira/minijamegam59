@@ -15,3 +15,11 @@ texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1194517523]
 shape = SubResource("CircleShape2D_hqtel")
+
+[node name="DashTimer" type="Timer" parent="." unique_id=904203615]
+wait_time = 0.5
+
+[node name="DashCD" type="Timer" parent="." unique_id=2137965624]
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCD" to="." method="_on_dash_cd_timeout"]
