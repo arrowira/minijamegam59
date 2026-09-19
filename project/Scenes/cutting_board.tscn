@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://biu8a0o1ca2vx" path="res://icon.svg" id="2_0mqgb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8sgqr"]
-radius = 104.172935
+radius = 161.69725
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mqgb"]
 size = Vector2(122, 123)
@@ -25,6 +25,7 @@ offset_bottom = -66.0
 max_value = 1.0
 
 [node name="progressTimer" type="Timer" parent="." unique_id=597786112]
+one_shot = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=634519095]
 
@@ -37,5 +38,6 @@ shape = SubResource("CircleShape2D_8sgqr")
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_0mqgb")
 
+[connection signal="timeout" from="progressTimer" to="." method="_on_progress_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
