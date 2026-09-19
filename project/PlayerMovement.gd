@@ -1,13 +1,33 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+@export var speed = 300.0
+@export var dashSpeed = 400.0
 
-
+var dashing = false
+var dashingCD = false
+var direction
 func _physics_process(delta: float) -> void:
-
-	var direction := Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
-	velocity = direction*SPEED
+	if Input.is_action_just_pressed("dash") and !dashingCD:
+		print("dash")
+		$DashTimer.start()
+		dashing = true
+	if dashing:
+		velocity = direction*dashSpeed
+	else:
+		direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
+	velocity = direction*speed
 	
 
 	move_and_slide()
+
+
+
+func _on_dash_cd_timeout() -> void:
+	dashingCD = false
+
+
+func _on_dash_timer_timeout() -> void:
+	$DashCD.start()
+	dashing = false
+	dashingCD = true
