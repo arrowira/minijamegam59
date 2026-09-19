@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bab4lv6uyppvk"]
+
+[ext_resource type="Script" uid="uid://cv5ulfcpeh2ky" path="res://Scenes/explains.gd" id="1_xyj3g"]
+[ext_resource type="Texture2D" uid="uid://wvmijkkfugyf" path="res://x-delete-button-png-15.png" id="2_qr6lb"]
+
+[node name="Explains" type="Control" unique_id=659165960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xyj3g")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=970718636]
+layout_mode = 0
+offset_left = 1459.0
+offset_right = 1971.0
+offset_bottom = 512.0
+scale = Vector2(0.079998136, 0.079998136)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=441102841]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=1584738107]
+layout_mode = 2
+texture_normal = ExtResource("2_qr6lb")
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
