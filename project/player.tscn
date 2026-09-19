@@ -17,7 +17,7 @@ texture = ExtResource("2_i3pqv")
 shape = SubResource("CircleShape2D_hqtel")
 
 [node name="DashTimer" type="Timer" parent="." unique_id=904203615]
-wait_time = 0.5
+wait_time = 0.15
 one_shot = true
 
 [node name="DashCD" type="Timer" parent="." unique_id=2137965624]
