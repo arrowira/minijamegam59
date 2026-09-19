@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://kjvy8j3ywoya"]
+
+[ext_resource type="Script" uid="uid://novtqatifwiq" path="res://Scripts/ItemManager.gd" id="1_2oiv6"]
+[ext_resource type="Texture2D" uid="uid://biu8a0o1ca2vx" path="res://icon.svg" id="1_3r01x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oiv6"]
+size = Vector2(130, 132)
+
+[node name="Item" type="Node2D" unique_id=811848529]
+script = ExtResource("1_2oiv6")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1264123535]
+texture = ExtResource("1_3r01x")
+
+[node name="ItemCollider" type="Area2D" parent="Sprite" unique_id=403727793]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/ItemCollider" unique_id=1118750894]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2oiv6")
+
+[connection signal="area_entered" from="Sprite/ItemCollider" to="." method="_on_item_collider_area_entered"]
+[connection signal="area_exited" from="Sprite/ItemCollider" to="." method="_on_item_collider_area_exited"]

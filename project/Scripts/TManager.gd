@@ -1,5 +1,7 @@
 extends Node2D
 
+var WItem = preload("res://Scenes/Item.tscn")
+
 var TScale = Vector2.ZERO
 var Grab = true
 var ToGrab = 0
@@ -24,6 +26,11 @@ func _physics_process(delta: float) -> void:
 			
 	if(PIn == true && Input.is_action_just_pressed("interact") && get_parent().get_node("player").Hand == 0):
 		get_parent().get_node("player").Hand = 1
+		var I = WItem.instantiate()
+		I.Held = true
+		I.Spr = "res://icon.svg"
+		I.ID = 1
+		get_parent().add_child(I)
 		Grab = false
 
 func _on_collider_area_entered(area: Area2D) -> void:
