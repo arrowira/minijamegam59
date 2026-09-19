@@ -14,10 +14,14 @@ var Hand = 0 #0 = hand empty
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and !dashingCD:
 		print("dash")
+		print(Hand)
 		$DashTimer.start()
 		dashing = true
 	if dashing:
-		velocity = direction*dashSpeed
+		if direction == Vector2.ZERO:
+			velocity = Vector2.RIGHT*dashSpeed
+		else:
+			velocity = direction*dashSpeed
 	else:
 		direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
 		velocity = direction*speed
