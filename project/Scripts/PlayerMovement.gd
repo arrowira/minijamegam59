@@ -7,6 +7,10 @@ extends CharacterBody2D
 var dashing = false
 var dashingCD = false
 var direction
+
+var Hand = 0 #0 = hand empty
+
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and !dashingCD:
 		print("dash")
@@ -17,7 +21,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
 		velocity = direction*speed
-	
+		
+	if(Input.is_action_just_pressed("drop") && Hand!=0):
+		Hand = 0
+		#Drop Code
 
 	move_and_slide()
 

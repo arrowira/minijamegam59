@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bo0ekwqflbirw" path="res://at01.ttf" id="3_2qcg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4eav"]
-size = Vector2(257, 255)
+size = Vector2(340, 322)
 
 [node name="Tomato" type="Node2D" unique_id=1995840475]
 script = ExtResource("1_xyqmk")
@@ -29,5 +29,8 @@ texture = ExtResource("2_bn0x3")
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Collider" unique_id=1314472397]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-2, -7)
 shape = SubResource("RectangleShape2D_y4eav")
+
+[connection signal="area_entered" from="Sprite/Collider" to="." method="_on_collider_area_entered"]
+[connection signal="area_exited" from="Sprite/Collider" to="." method="_on_collider_area_exited"]

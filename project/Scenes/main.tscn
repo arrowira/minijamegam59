@@ -7,6 +7,8 @@
 
 [node name="player" parent="." unique_id=1095727682 instance=ExtResource("1_bo1nx")]
 position = Vector2(185, 159)
+speed = null
+dashSpeed = null
 
 [node name="Tomato" parent="." unique_id=1995840475 instance=ExtResource("2_8gbba")]
 position = Vector2(691, 418)
