@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cbrnxfthuk5do"]
+
+[ext_resource type="Script" uid="uid://b0lstdlpxyf5m" path="res://Scripts/ActiveStation.gd" id="1_oncj3"]
+[ext_resource type="Texture2D" uid="uid://biu8a0o1ca2vx" path="res://icon.svg" id="2_0mqgb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sgqr"]
+radius = 175.55911
+
+[node name="CuttingBoard" type="Node2D" unique_id=2018179734]
+script = ExtResource("1_oncj3")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1728441334]
+modulate = Color(0.42113587, 0.13082004, 0.18130872, 1)
+position = Vector2(-1, 2)
+texture = ExtResource("2_0mqgb")
+
+[node name="progress" type="ProgressBar" parent="." unique_id=1467176558]
+offset_left = -53.0
+offset_top = -93.0
+offset_right = 53.0
+offset_bottom = -66.0
+
+[node name="progressTimer" type="Timer" parent="." unique_id=597786112]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=634519095]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1013800573]
+shape = SubResource("CircleShape2D_8sgqr")
