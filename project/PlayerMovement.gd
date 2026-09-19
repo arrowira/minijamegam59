@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 300.0
-@export var dashSpeed = 400.0
+@export var dashSpeed = 1500.0
 
 var dashing = false
 var dashingCD = false
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		velocity = direction*dashSpeed
 	else:
 		direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
-	velocity = direction*speed
+		velocity = direction*speed
 	
 
 	move_and_slide()
